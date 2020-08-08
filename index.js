@@ -27,6 +27,19 @@ function getFinalsYears() {
   return getFinals().map(match => match.Year)
 }
 
+/* Task 2 (optional): Create a function called  getFinals that takes `data` as an argument and returns an array of objects with only finals data */
+
+import { fifaData } from './fifa.js';
+
+function getFinals(data) {
+    const finals = data.filter(final => {
+        return final["Stage"] == "Final"
+    })
+    return finals;
+};
+ 
+console.log(getFinals(fifaData));
+
 
 /* Task 3: Implement a function called `getFinalsWinners` that returns an array of strings which are the names of the country that won each final */
 
